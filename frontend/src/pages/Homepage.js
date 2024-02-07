@@ -2,27 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Grid, Box, Button } from '@mui/material';
 import styled from 'styled-components';
-import Students from "../assets/students.svg";
+import Students from "../assets/man-1835_256.gif";
 import { LightPurpleButton } from '../components/buttonStyles';
 
 const Homepage = () => {
     return (
         <StyledContainer>
             <Grid container spacing={0}>
-                <Grid item xs={12} md={6}>
-                    <img src={Students} alt="students" style={{ width: '100%' }} />
+                <Grid item xs={12} md={6} mt={10}>
+                    <img src="https://cdn.pixabay.com/animation/2022/08/31/08/22/08-22-29-904_512.gif" alt="students" style={{ width: '100%' }} />
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <StyledPaper elevation={3}>
                         <StyledTitle>
                             Welcome to
                             <br />
-                            School Management
+                            Department of Computer Science
                             <br />
-                            System
+                            Biswanath College
                         </StyledTitle>
                         <StyledText>
-                            Streamline school management, class organization, and add students and faculty.
+                            Streamline department login system, class organization, and add students and faculty.
                             Seamlessly track attendance, assess performance, and provide feedback.
                             Access records, view marks, and communicate effortlessly.
                         </StyledText>
@@ -32,19 +32,6 @@ const Homepage = () => {
                                     Login
                                 </LightPurpleButton>
                             </StyledLink>
-                            <StyledLink to="/chooseasguest">
-                                <Button variant="outlined" fullWidth
-                                    sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
-                                >
-                                    Login as Guest
-                                </Button>
-                            </StyledLink>
-                            <StyledText>
-                                Don't have an account?{' '}
-                                <Link to="/Adminregister" style={{color:"#550080"}}>
-                                    Sign up
-                                </Link>
-                            </StyledText>
                         </StyledBox>
                     </StyledPaper>
                 </Grid>
@@ -77,8 +64,9 @@ const StyledBox = styled(Box)`
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   color: #252525;
+  margin-top: 50px;
   /* font-family: "Manrope"; */
   font-weight: bold;
   padding-top: 0;

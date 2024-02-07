@@ -12,6 +12,12 @@ const StudentProfile = () => {
   const sclassName = currentUser.sclassName
   const studentSchool = currentUser.school
 
+   const handleConversion = (nameFromBackend) => {
+    const formattedName = nameFromBackend.replace(/\s/g, '').toLowerCase();
+    const email = `${formattedName}@gmail.com`;
+    return email;
+  };
+
   return (
     <>
       <Container maxWidth="md">
@@ -41,14 +47,7 @@ const StudentProfile = () => {
             <Grid item xs={12}>
               <Box display="flex" justifyContent="center">
                 <Typography variant="subtitle1" component="p" textAlign="center">
-                  Class: {sclassName.sclassName}
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <Box display="flex" justifyContent="center">
-                <Typography variant="subtitle1" component="p" textAlign="center">
-                  School: {studentSchool.schoolName}
+                  Department: Department of Computer Science
                 </Typography>
               </Box>
             </Grid>
@@ -62,32 +61,12 @@ const StudentProfile = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1" component="p">
-                  <strong>Date of Birth:</strong> January 1, 2000
+                  <strong>Email:</strong> {handleConversion(currentUser.name)}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography variant="subtitle1" component="p">
-                  <strong>Gender:</strong> Male
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1" component="p">
-                  <strong>Email:</strong> john.doe@example.com
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1" component="p">
-                  <strong>Phone:</strong> (123) 456-7890
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1" component="p">
-                  <strong>Address:</strong> 123 Main Street, City, Country
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Typography variant="subtitle1" component="p">
-                  <strong>Emergency Contact:</strong> (987) 654-3210
+                  <strong>Department Contact No:</strong> +91 6000532526
                 </Typography>
               </Grid>
             </Grid>

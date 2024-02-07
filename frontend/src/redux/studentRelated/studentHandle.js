@@ -9,6 +9,7 @@ import {
 import { _BASE_URL } from '../../Config/Urls';
 
 export const getAllStudents = (id) => async (dispatch) => {
+    dispatch(getRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/Students/${id}`);

@@ -13,13 +13,16 @@ import {
 } from './sclassSlice';
 import { _BASE_URL } from '../../Config/Urls';
 
+
 export const getAllSclasses = (id, address) => async (dispatch) => {
+    dispatch(getRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/${address}List/${id}`);
         if (result.data.message) {
             dispatch(getFailedTwo(result.data.message));
         } else {
+            dispatch(getSuccess(result.data));
         }
     } catch (error) {
         dispatch(getError(error));
@@ -27,6 +30,7 @@ export const getAllSclasses = (id, address) => async (dispatch) => {
 }
 
 export const getClassStudents = (id) => async (dispatch) => {
+    dispatch(getRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/Sclass/Students/${id}`);
@@ -41,6 +45,7 @@ export const getClassStudents = (id) => async (dispatch) => {
 }
 
 export const getClassDetails = (id, address) => async (dispatch) => {
+    dispatch(getRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/${address}/${id}`);
@@ -53,6 +58,7 @@ export const getClassDetails = (id, address) => async (dispatch) => {
 }
 
 export const getSubjectList = (id, address) => async (dispatch) => {
+    dispatch(getRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/${address}/${id}`);
@@ -67,6 +73,7 @@ export const getSubjectList = (id, address) => async (dispatch) => {
 }
 
 export const getTeacherFreeClassSubjects = (id) => async (dispatch) => {
+    dispatch(getRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/FreeSubjectList/${id}`);
@@ -81,6 +88,7 @@ export const getTeacherFreeClassSubjects = (id) => async (dispatch) => {
 }
 
 export const getSubjectDetails = (id, address) => async (dispatch) => {
+    dispatch(getSubDetailsRequest());
 
     try {
         const result = await axios.get(`${_BASE_URL}/${address}/${id}`);

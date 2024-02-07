@@ -93,7 +93,7 @@ const ChooseUser = ({ visitor }) => {
                   <AccountCircle fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Admin
+                  HOD
                 </StyledTypography>
                 Login as an administrator to access the dashboard to manage app data.
               </StyledPaper>

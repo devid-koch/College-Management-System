@@ -31,15 +31,12 @@ const ShowSubjects = () => {
     const [message, setMessage] = useState("");
 
     const deleteHandler = (deleteID, address) => {
-        console.log(deleteID);
-        console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
-
-        // dispatch(deleteUser(deleteID, address))
-        //     .then(() => {
-        //         dispatch(getSubjectList(currentUser._id, "AllSubjects"));
-        //     })
+        dispatch(deleteUser(deleteID, address))
+            .then(() => {
+                dispatch(getSubjectList(currentUser._id, "AllSubjects"));
+                setShowPopup(true)
+                setMessage("Deleted")
+            })
     }
 
     const subjectColumns = [
@@ -90,7 +87,7 @@ const ShowSubjects = () => {
                 :
                 <>
                     {response ?
-                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
                             <GreenButton variant="contained"
                                 onClick={() => navigate("/Admin/subjects/chooseclass")}>
                                 Add Subjects

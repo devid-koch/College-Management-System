@@ -218,9 +218,6 @@ const LoginPage = ({ role }) => {
                                     control={<Checkbox value="remember" color="primary" />}
                                     label="Remember me"
                                 />
-                                <StyledLink href="#">
-                                    Forgot password?
-                                </StyledLink>
                             </Grid>
                             <LightPurpleButton
                                 type="submit"
@@ -232,26 +229,6 @@ const LoginPage = ({ role }) => {
                                     <CircularProgress size={24} color="inherit" />
                                     : "Login"}
                             </LightPurpleButton>
-                            <Button
-                                fullWidth
-                                onClick={guestModeHandler}
-                                variant="outlined"
-                                sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
-                            >
-                                Login as Guest
-                            </Button>
-                            {role === "Admin" &&
-                                <Grid container>
-                                    <Grid>
-                                        Don't have an account?
-                                    </Grid>
-                                    <Grid item sx={{ ml: 2 }}>
-                                        <StyledLink to="/Adminregister">
-                                            Sign up
-                                        </StyledLink>
-                                    </Grid>
-                                </Grid>
-                            }
                         </Box>
                     </Box>
                 </Grid>
@@ -261,7 +238,7 @@ const LoginPage = ({ role }) => {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: `url(${bgpic})`,
+                        backgroundImage: `url("https://media1.tenor.com/m/rePDfDWO3XoAAAAd/hacking.gif")`,
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

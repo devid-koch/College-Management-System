@@ -130,7 +130,7 @@ const SubjectForm = () => {
                             />
                         </Grid>
                         <Grid item xs={6}>
-                            <Box display="flex" alignItems="flex-end">
+                            <Box display="flex" alignItems="center">
                                 {index === 0 ? (
                                     <Button
                                         variant="outlined"
@@ -153,7 +153,7 @@ const SubjectForm = () => {
                     </React.Fragment>
                 ))}
                 <Grid item xs={12}>
-                    <Box display="flex" justifyContent="flex-end">
+                    <Box display="flex" justifyContent="center">
                         <Button variant="contained" color="primary" type="submit" disabled={loader}>
                             {loader ? (
                                 <CircularProgress size={24} color="inherit" />

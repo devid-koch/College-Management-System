@@ -1,1 +1,1 @@
-export const _BASE_URL = "http://localhost:5000"
+export const _BASE_URL = "https://computer-science-ecj9.onrender.com"
